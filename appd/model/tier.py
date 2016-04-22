@@ -15,7 +15,7 @@ class Tier(JsonObject):
                    'DOT_NET_APP_AGENT', 'DOT_NET_MACHINE_AGENT',
                    'PHP_APP_AGENT', 'PHP_MACHINE_AGENT',
                    'NODEJS_APP_AGENT','PYTHON_APP_AGENT',
-                   'NATIVE_WEB_SERVER')
+                   'NATIVE_WEB_SERVER','NATIVE_SDK')
 
     def __init(self, tier_id=0, name='', description='', agent_type='JAVA_AGENT', node_count=0,
                tier_type='Java Application Server'):
