@@ -133,5 +133,4 @@ for k, v in sorted(rows.items()):
 
 # Print the report to stdout.
 
-print(etree.ProcessingInstruction('xml', 'version="1.0" encoding="UTF-8"'))
-print(etree.tostring(root, pretty_print=True, encoding='UTF-8'))
+print(etree.tostring(root, pretty_print=True, encoding='UTF-8', xml_declaration=True ))
