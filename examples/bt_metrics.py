@@ -41,7 +41,7 @@ __version__ = '0.4.5'
 # reporting period, adjust these variables.
 
 time_in_mins = 1440
-end_time = datetime.now().replace(hour=0, minute=0, second=0, microsecond=0)
+end_time = datetime.now().replace(day=datetime.now().day-1)
 end_epoch = int(mktime(end_time.timetuple())) * 1000
 
 
@@ -83,7 +83,7 @@ for app in c.get_applications():
     bt_list = c.get_bt_list(app.id)
 
     for md in c.get_metrics('Business Transaction Performance|Business Transactions|*|*|*',
-                            app.id, time_range_type='BEFORE_TIME', end_time=end_epoch,
+                            app.id, time_range_type='AFTER_TIME', start_time=end_epoch,
                             duration_in_mins=time_in_mins, rollup=True):
 
         # Get the last 3 components of the metric path. This should be 'tier_name|bt_name|metric_name'.
